@@ -1,88 +1,98 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const PricingSection = () => {
+  const navigate = useNavigate();
+
+  const handlePlanSelect = (plan: string) => {
+    navigate(`/plans/${plan}`);
+  };
+
   const plans = [
     {
       name: "Básico",
-      price: "$3,500",
-      monthly: "$89/mes",
-      tagline: "Perfecto para empezar",
-      description: "Ideal para gimnasios con 1 sucursal que buscan digitalizarse",
+      price: "$4,500",
+      monthly: "$149/mes",
+      tagline: "Solución Esencial",
+      description: "Ideal para gimnasios que buscan digitalización inteligente",
       popular: false,
       features: [
-        "App móvil personalizada",
-        "Panel de administración",
-        "Hasta 50 ejercicios",
-        "Hasta 20 máquinas",
-        "1 sucursal",
-        "Tracking básico",
+        "Panel de administración personalizado",
+        "App móvil con tu marca",
+        "Gestión de usuarios y membresías",
+        "Catálogo de 50 ejercicios",
+        "Mapeo de 20 máquinas",
+        "Tracking de entrenamientos",
         "Chat IA conversacional",
-        "Landing page",
-        "Gestión manual de usuarios",
-        "Soporte por 3 meses"
+        "Landing page personalizada",
+        "Soporte técnico prioritario",
+        "Actualizaciones gratuitas"
       ],
       limitations: [
-        "Sin rutinas generadas por IA",
-        "Sin tracking avanzado (pesos/repeticiones)",
+        "Sin generación de rutinas por IA",
+        "Sin análisis avanzado de progreso",
         "Sin gestión multi-sucursal",
-        "Sin análisis inteligente de progreso"
+        "Sin coach personal IA"
       ],
-      cta: "Empezar con Básico"
+      cta: "Ver Detalles"
     },
     {
       name: "Premium",
-      price: "$4,800",
-      monthly: "$189/mes",
-      tagline: "La solución completa",
-      description: "Para gimnasios en crecimiento que quieren tecnología de punta",
+      price: "$5,800",
+      monthly: "$249/mes",
+      tagline: "Solución Empresarial",
+      description: "Para gimnasios que buscan liderar con tecnología",
       popular: true,
       features: [
-        "Ejercicios ilimitados",
-        "Máquinas ilimitadas",
+        "Todo lo del plan Básico",
+        "Ejercicios y máquinas ilimitados",
         "Sucursales ilimitadas",
         "Portal web completo",
-        "Tracking avanzado completo",
         "Generación de rutinas por IA",
         "Coach personal IA",
-        "Análisis inteligente de progreso",
+        "Análisis predictivo de progreso",
         "Gestión multi-sucursal",
-        "Reportes ejecutivos",
-        "Soporte prioritario",
-        "Branding personalizado"
-      ],
-      limitations: [],
-      cta: "Elegir Premium"
-    },
-    {
-      name: "Custom",
-      price: "Variable",
-      monthly: "Personalizado",
-      tagline: "Construye tu solución perfecta",
-      description: "Selecciona exactamente las características que necesitas",
-      popular: false,
-      features: [
-        "Calculadora Interactiva disponible",
-        "Características a la medida",
-        "Integración personalizada",
-        "Soporte dedicado",
+        "Reportes ejecutivos avanzados",
+        "Branding personalizado",
+        "Soporte 24/7",
         "Implementación guiada"
       ],
       limitations: [],
-      cta: "Personalizar mi GoriApp"
+      cta: "Ver Detalles"
+    },
+    {
+      name: "Custom",
+      price: "Personalizado",
+      monthly: "A medida",
+      tagline: "Solución a tu medida",
+      description: "Construye la solución perfecta para tu negocio",
+      popular: false,
+      features: [
+        "Selección de módulos personalizada",
+        "Integración con sistemas existentes",
+        "Desarrollo de características únicas",
+        "Soporte dedicado",
+        "Implementación personalizada",
+        "Capacitación in-house",
+        "SLA garantizado",
+        "Roadmap personalizado"
+      ],
+      limitations: [],
+      cta: "Construir Solución"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Planes y <span className="text-gradient">Precios</span>
+            Soluciones <span className="text-gradient">Personalizadas</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Elige el plan perfecto para tu gimnasio. Todos incluyen configuración inicial y migración de datos.
+            Elige la solución que mejor se adapte a tu gimnasio. Todas incluyen configuración inicial, 
+            migración de datos y soporte continuo.
           </p>
         </div>
 
@@ -95,7 +105,7 @@ const PricingSection = () => {
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-                    Más Popular
+                    Recomendado
                   </span>
                 </div>
               )}
@@ -144,12 +154,19 @@ const PricingSection = () => {
                 <Button 
                   className={`w-full ${plan.popular ? 'gradient-bg text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}
                   size="lg"
+                  onClick={() => handlePlanSelect(plan.name.toLowerCase())}
                 >
                   {plan.cta}
                 </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-gray-600">
+            ¿Necesitas una solución específica? <a href="#contact" className="text-blue-600 font-semibold hover:underline">Contáctanos</a> para una propuesta personalizada.
+          </p>
         </div>
       </div>
     </section>

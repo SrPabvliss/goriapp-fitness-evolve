@@ -1,56 +1,99 @@
-
 const FeaturesSection = () => {
   const featureCategories = [
     {
-      title: "Sistema de Administración",
-      icon: "⚙️",
+      title: "Core del Sistema",
+      icon: "⚡",
       features: [
-        "Dashboard ejecutivo con métricas",
-        "Gestión de usuarios y permisos",
-        "Configuración por sucursal",
-        "Reportes automáticos"
+        "Panel de administración personalizado",
+        "Sistema multi-tenant seguro",
+        "Gestión de usuarios y roles",
+        "Sistema de suscripciones",
+        "App móvil con tu marca",
+        "Navegación adaptativa"
+      ]
+    },
+    {
+      title: "Gestión Inteligente",
+      icon: "📊",
+      features: [
+        "Constructor de ejercicios personalizado",
+        "Mapeo de equipamiento por sucursal",
+        "Tracking avanzado de progreso",
+        "Gestión multi-sucursal",
+        "Reportes ejecutivos",
+        "Autogestión de contenido"
       ]
     },
     {
       title: "Inteligencia Artificial",
       icon: "🤖",
       features: [
-        "Conversación natural en español",
-        "Rutinas personalizadas",
+        "Coach personal IA",
+        "Generación de rutinas inteligentes",
+        "Análisis predictivo de progreso",
+        "Chat conversacional en español",
         "Adaptación a equipamiento",
-        "Análisis de progreso"
+        "Recomendaciones personalizadas"
       ]
     },
     {
-      title: "App Móvil",
-      icon: "📱",
+      title: "Portal Web",
+      icon: "🌐",
       features: [
-        "Tracking en tiempo real",
-        "Registro de pesos/repeticiones",
-        "Historial de progreso",
-        "Notificaciones inteligentes",
-        "Branding personalizable"
+        "Landing page personalizada",
+        "Dashboard web para usuarios",
+        "Sincronización con app móvil",
+        "Sistema de reservas",
+        "Branding personalizado",
+        "SEO optimizado"
+      ]
+    },
+    {
+      title: "Soporte y Seguridad",
+      icon: "🛡️",
+      features: [
+        "Soporte técnico prioritario",
+        "Actualizaciones gratuitas",
+        "Backup automático",
+        "Seguridad de datos",
+        "Capacitación incluida",
+        "SLA garantizado"
+      ]
+    },
+    {
+      title: "Integración y Escalabilidad",
+      icon: "🔄",
+      features: [
+        "APIs disponibles",
+        "Integración con sistemas existentes",
+        "Escalable según necesidades",
+        "Personalización avanzada",
+        "Módulos adicionales",
+        "Roadmap personalizado"
       ]
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Características <span className="text-gradient">Principales</span>
+            Módulos <span className="text-gradient">Personalizables</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tecnología de última generación diseñada específicamente para gimnasios ecuatorianos
+            Construye la solución perfecta para tu gimnasio con nuestros módulos integrados
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {featureCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div 
+              key={index} 
+              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
               <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-2xl font-bold mb-6">{category.title}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">{category.title}</h3>
               <ul className="space-y-3">
                 {category.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
@@ -61,6 +104,15 @@ const FeaturesSection = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-gray-600">
+            ¿Necesitas más información sobre algún módulo específico? 
+            <a href="#contact" className="text-blue-600 font-semibold hover:underline ml-1">
+              Contáctanos
+            </a>
+          </p>
         </div>
       </div>
     </section>

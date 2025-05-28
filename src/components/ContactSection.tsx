@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +13,10 @@ const ContactSection = () => {
     gymName: "",
     branches: "",
     plan: "",
-    message: ""
+    message: "",
+    currentSystem: "",
+    timeline: "",
+    budget: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,18 +30,19 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Solicita tu <span className="text-gradient">Demo Personalizada</span>
+            Agenda tu <span className="text-gradient">Consulta Personalizada</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre cómo GoriApp puede transformar tu gimnasio. Te contactamos en menos de 24 horas.
+            Descubre cómo podemos adaptar GoriApp a las necesidades específicas de tu gimnasio. 
+            Te contactamos en menos de 24 horas para una propuesta detallada.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -67,12 +70,13 @@ const ContactSection = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="phone">Teléfono</Label>
+                <Label htmlFor="phone">Teléfono *</Label>
                 <Input
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   placeholder="+593 99 123 4567"
+                  required
                 />
               </div>
               <div>
@@ -89,7 +93,7 @@ const ContactSection = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="branches">Número de Sucursales</Label>
+                <Label htmlFor="branches">Número de Sucursales *</Label>
                 <Select onValueChange={(value) => handleInputChange("branches", value)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Selecciona" />
@@ -103,15 +107,41 @@ const ContactSection = () => {
                 </Select>
               </div>
               <div>
-                <Label htmlFor="plan">Plan de Interés</Label>
-                <Select onValueChange={(value) => handleInputChange("plan", value)}>
+                <Label htmlFor="currentSystem">Sistema Actual</Label>
+                <Input
+                  id="currentSystem"
+                  value={formData.currentSystem}
+                  onChange={(e) => handleInputChange("currentSystem", e.target.value)}
+                  placeholder="¿Qué sistema usas actualmente?"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="timeline">Timeline de Implementación</Label>
+                <Select onValueChange={(value) => handleInputChange("timeline", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona un plan" />
+                    <SelectValue placeholder="Selecciona" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="basico">Plan Básico</SelectItem>
-                    <SelectItem value="premium">Plan Premium</SelectItem>
-                    <SelectItem value="custom">Plan Custom</SelectItem>
+                    <SelectItem value="inmediato">Inmediato</SelectItem>
+                    <SelectItem value="1-3">1-3 meses</SelectItem>
+                    <SelectItem value="3-6">3-6 meses</SelectItem>
+                    <SelectItem value="6+">Más de 6 meses</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label htmlFor="budget">Presupuesto Estimado</Label>
+                <Select onValueChange={(value) => handleInputChange("budget", value)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Selecciona" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="basico">Plan Básico ($3,500)</SelectItem>
+                    <SelectItem value="premium">Plan Premium ($4,800)</SelectItem>
+                    <SelectItem value="custom">Personalizado</SelectItem>
                     <SelectItem value="consulta">Solo consulta</SelectItem>
                   </SelectContent>
                 </Select>
@@ -119,28 +149,34 @@ const ContactSection = () => {
             </div>
 
             <div>
-              <Label htmlFor="message">Mensaje Adicional</Label>
+              <Label htmlFor="message">Necesidades Específicas *</Label>
               <Textarea
                 id="message"
                 value={formData.message}
                 onChange={(e) => handleInputChange("message", e.target.value)}
-                placeholder="Cuéntanos más sobre tu gimnasio y necesidades específicas..."
+                placeholder="Cuéntanos sobre tus necesidades específicas, procesos actuales, y objetivos a corto y largo plazo..."
                 rows={4}
+                required
               />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button type="submit" className="gradient-bg text-white flex-1" size="lg">
-                Solicitar Demo Personalizada
+                Solicitar Consulta Personalizada
               </Button>
               <Button type="button" variant="outline" className="flex-1" size="lg">
-                Obtener Cotización
+                Ver Propuesta Detallada
               </Button>
             </div>
 
-            <p className="text-sm text-gray-500 text-center">
-              * Campos obligatorios. Te contactaremos en menos de 24 horas.
-            </p>
+            <div className="text-center space-y-2">
+              <p className="text-sm text-gray-500">
+                * Campos obligatorios. Te contactaremos en menos de 24 horas.
+              </p>
+              <p className="text-sm text-gray-500">
+                Tu información está segura y nunca será compartida con terceros.
+              </p>
+            </div>
           </form>
         </div>
       </div>
