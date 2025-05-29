@@ -7,6 +7,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FeaturesGridSection from "@/components/FeaturesGridSection";
 
 const Index = () => {
   return (
@@ -16,7 +17,7 @@ const Index = () => {
         <HeroSection />
       </section>
       <section id="features" className="min-h-[calc(100vh-80px)] section-offset">
-        <FeaturesSection />
+        <FeaturesGridSection />
       </section>
       <section id="solutions" className="min-h-[calc(100vh-80px)] section-offset">
         <ProblemSolutionSection />
