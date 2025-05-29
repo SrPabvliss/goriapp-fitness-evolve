@@ -1,122 +1,77 @@
-const FeaturesSection = () => {
-  const featureCategories = [
-    {
-      title: "Core del Sistema",
-      icon: "⚡",
-      features: [
-        "Panel de administración personalizado",
-        "Sistema multi-tenant seguro",
-        "Gestión de usuarios y roles",
-        "Sistema de suscripciones",
-        "App móvil con tu marca",
-        "Navegación adaptativa"
-      ]
-    },
-    {
-      title: "Gestión Inteligente",
-      icon: "📊",
-      features: [
-        "Constructor de ejercicios personalizado",
-        "Mapeo de equipamiento por sucursal",
-        "Tracking avanzado de progreso",
-        "Gestión multi-sucursal",
-        "Reportes ejecutivos",
-        "Autogestión de contenido"
-      ]
-    },
-    {
-      title: "Inteligencia Artificial",
-      icon: "🤖",
-      features: [
-        "Coach personal IA",
-        "Generación de rutinas inteligentes",
-        "Análisis predictivo de progreso",
-        "Chat conversacional en español",
-        "Adaptación a equipamiento",
-        "Recomendaciones personalizadas"
-      ]
-    },
-    {
-      title: "Portal Web",
-      icon: "🌐",
-      features: [
-        "Landing page personalizada",
-        "Dashboard web para usuarios",
-        "Sincronización con app móvil",
-        "Sistema de reservas",
-        "Branding personalizado",
-        "SEO optimizado"
-      ]
-    },
-    {
-      title: "Soporte y Seguridad",
-      icon: "🛡️",
-      features: [
-        "Soporte técnico prioritario",
-        "Actualizaciones gratuitas",
-        "Backup automático",
-        "Seguridad de datos",
-        "Capacitación incluida",
-        "SLA garantizado"
-      ]
-    },
-    {
-      title: "Integración y Escalabilidad",
-      icon: "🔄",
-      features: [
-        "APIs disponibles",
-        "Integración con sistemas existentes",
-        "Escalable según necesidades",
-        "Personalización avanzada",
-        "Módulos adicionales",
-        "Roadmap personalizado"
-      ]
-    }
-  ];
+import { ShieldCheck, Smartphone, BarChart2, Settings, Bot, LayoutDashboard } from "lucide-react";
 
+const features = [
+  {
+    title: "Gestión centralizada",
+    description:
+      "Administra todo tu gimnasio, usuarios y sucursales desde un panel intuitivo y moderno. Simplifica la operación diaria y mantén el control total en un solo lugar.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de dashboard propio
+    alt: "Panel de gestión centralizada"
+  },
+  {
+    title: "Entrenamiento inteligente",
+    description:
+      "Ofrece rutinas y planes personalizados generados por IA, adaptados a los objetivos y preferencias de cada usuario. El coach virtual motiva y guía a tus miembros en todo momento.",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de IA/coach
+    alt: "Entrenamiento inteligente con IA"
+  },
+  {
+    title: "App móvil de marca",
+    description:
+      "Tus miembros acceden a su progreso, rutinas y comunidad desde una app intuitiva, personalizada con la imagen de tu gimnasio.",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de app móvil
+    alt: "App móvil personalizada"
+  },
+  {
+    title: "Analítica visual",
+    description:
+      "Visualiza el avance de tu negocio y de tus miembros con reportes claros y métricas clave en tiempo real. Toma decisiones informadas y detecta oportunidades de mejora.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de analítica
+    alt: "Analítica visual y reportes"
+  },
+  {
+    title: "Personalización flexible",
+    description:
+      "Adapta la plataforma a las necesidades de tu gimnasio: crea tu propio catálogo de ejercicios, mapea tus máquinas y personaliza la experiencia visual.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de personalización
+    alt: "Personalización flexible"
+  },
+  {
+    title: "Soporte y seguridad profesional",
+    description:
+      "Disfruta de soporte dedicado y actualizaciones constantes, con la tranquilidad de que tus datos están siempre protegidos.",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // TODO: Reemplazar por mockup de seguridad/soporte
+    alt: "Soporte y seguridad"
+  }
+];
+
+export default function FeaturesSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Módulos <span className="text-gradient">Personalizables</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Construye la solución perfecta para tu gimnasio con nuestros módulos integrados
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {featureCategories.map((category, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">{category.title}</h3>
-              <ul className="space-y-3">
-                {category.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="text-blue-500 mt-1">•</span>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 flex flex-col gap-20">
+        {features.map((feature, idx) => (
+          <div
+            key={idx}
+            className={`flex flex-col-reverse lg:flex-row items-center gap-10 ${
+              idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            }`}
+          >
+            {/* Imagen o mockup */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <img
+                src={feature.image}
+                alt={feature.alt}
+                className="rounded-xl shadow-lg max-w-xs w-full object-contain"
+              />
             </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-gray-600">
-            ¿Necesitas más información sobre algún módulo específico? 
-            <a href="#contact" className="text-blue-600 font-semibold hover:underline ml-1">
-              Contáctanos
-            </a>
-          </p>
-        </div>
+            {/* Texto */}
+            <div className="w-full lg:w-1/2">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-900">{feature.title}</h3>
+              <p className="text-lg text-gray-600 mb-2">{feature.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default FeaturesSection;
+}
