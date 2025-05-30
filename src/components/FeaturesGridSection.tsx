@@ -13,6 +13,7 @@ import {
   Database,
   Headphones
 } from "lucide-react";
+import { scrollToSection } from "./Navbar";
 
 const FeaturesGridSection = () => {
   const features = [
@@ -478,7 +479,7 @@ const FeaturesGridSection = () => {
           <p className="text-gray-600 mb-6">
             ¿Necesitas algo específico que no está aquí?
           </p>
-          <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+          <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors" onClick={() => scrollToSection('contact')}>
             Hablemos sobre tu proyecto personalizado →
           </button>
         </div>

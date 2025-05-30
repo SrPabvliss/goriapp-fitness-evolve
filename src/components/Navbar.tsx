@@ -2,22 +2,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
+
+export const scrollToSection = (sectionId: string, setIsMenuOpen?: (isOpen: boolean) => void) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const navbarHeight = 80; // altura del navbar
+    const elementPosition = element.offsetTop - navbarHeight;
+    
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    });
+  }
+  if (setIsMenuOpen) {
+    setIsMenuOpen(false);
+  }
+};
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarHeight = 80; // altura del navbar
-      const elementPosition = element.offsetTop - navbarHeight;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-    setIsMenuOpen(false);
-  };
 
   const navItems = [
     { id: 'features', label: 'Características' },
@@ -32,7 +36,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">D</span>
@@ -48,7 +52,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => scrollToSection(item.id, setIsMenuOpen)}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 {item.label}
@@ -60,14 +64,14 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('contact', setIsMenuOpen)}
               className="border-blue-200 text-blue-600 hover:bg-blue-50"
             >
               Agenda Consulta
             </Button>
             <Button 
               className="gradient-bg text-white"
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => scrollToSection('pricing', setIsMenuOpen)}
             >
               Ver Precios
             </Button>
@@ -97,7 +101,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => scrollToSection(item.id, setIsMenuOpen)}
                   className="block w-full text-left text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
                 >
                   {item.label}
@@ -106,14 +110,14 @@ const Navbar = () => {
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
                   variant="outline"
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection('contact', setIsMenuOpen)}
                   className="border-blue-200 text-blue-600"
                 >
                   Agenda Consulta
                 </Button>
                 <Button 
                   className="gradient-bg text-white"
-                  onClick={() => scrollToSection('pricing')}
+                  onClick={() => scrollToSection('pricing', setIsMenuOpen)}
                 >
                   Ver Precios
                 </Button>
