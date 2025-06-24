@@ -51,7 +51,7 @@ const PricingSection = () => {
         "Portal web completo",
         "Generación de rutinas por IA",
         "Coach personal IA",
-        "Análisis predictivo de progreso",
+        "Análisis de progreso",
         "Gestión multi-sucursal",
         "Reportes ejecutivos avanzados",
         "Branding personalizado",

@@ -76,11 +76,11 @@ const ComparisonSection = () => {
           goriapp: false,
           goriappai: true
         },
-        {
-          name: "Análisis predictivo",
-          goriapp: false,
-          goriappai: true
-        }
+        // {
+        //   name: "Análisis predictivo",
+        //   goriapp: false,
+        //   goriappai: true
+        // }
       ]
     },
     {
@@ -236,14 +236,14 @@ const ComparisonSection = () => {
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 text-center">
               <div className="text-3xl font-bold text-gray-900 mb-2">$4,500</div>
-              <div className="text-base text-gray-600 mb-4">+ $89/mes mantenimiento</div>
+              {/* <div className="text-base text-gray-600 mb-4">+ $89/mes mantenimiento</div> */}
               <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
                 Elegir GoriApp
               </button>
             </div>
             <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-8 text-center border-2 border-blue-500 shadow-lg">
               <div className="text-3xl font-bold text-gray-900 mb-2">$5,800</div>
-              <div className="text-base text-gray-600 mb-4">+ $189/mes mantenimiento</div>
+              {/* <div className="text-base text-gray-600 mb-4">+ $189/mes mantenimiento</div> */}
               <button className="w-full bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
                 Elegir GoriApp AI
               </button>

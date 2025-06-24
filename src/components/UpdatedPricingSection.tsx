@@ -14,7 +14,7 @@ const UpdatedPricingSection = () => {
     {
       name: "GoriApp",
       price: "$4,500",
-      monthly: "$89/mes",
+      // monthly: "$89/mes",
       tagline: "Solución Esencial",
       description: "Ideal para gimnasios que buscan digitalización inteligente",
       popular: false,
@@ -43,7 +43,7 @@ const UpdatedPricingSection = () => {
     {
       name: "GoriApp AI",
       price: "$5,800",
-      monthly: "$189/mes",
+      // monthly: "$189/mes",
       tagline: "Solución Empresarial",
       description: "Para gimnasios que buscan liderar con tecnología IA",
       popular: true,
@@ -51,11 +51,11 @@ const UpdatedPricingSection = () => {
         "Todo lo del plan GoriApp",
         "Ejercicios y máquinas ilimitados", 
         "Sucursales ilimitadas",
-        "Usuarios ilimitados",
+        // "Usuarios ilimitados",
         "Portal web completo integrado",
         "Generación de rutinas por IA avanzada",
         "Coach personal IA conversacional",
-        "Análisis predictivo de progreso",
+        "Análisis de progreso",
         "Gestión multi-sucursal centralizada",
         "Reportes ejecutivos avanzados",
         "Branding personalizado completo",
@@ -68,7 +68,7 @@ const UpdatedPricingSection = () => {
     {
       name: "Custom",
       price: "Personalizado",
-      monthly: "A medida",
+      // monthly: "A medida",
       tagline: "Solución a tu medida",
       description: "Construye la solución perfecta para tu operación específica",
       popular: false,
@@ -126,7 +126,7 @@ const UpdatedPricingSection = () => {
                 <div className="mt-4">
                   <div className="text-4xl font-bold text-gray-900">{plan.price}</div>
                   <div className="text-sm text-gray-500 mt-1">
-                    {plan.monthly} <span className="text-xs">(mantenimiento)</span>
+                    {/* {plan.monthly} <span className="text-xs">(mantenimiento)</span> */}
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">{plan.description}</p>

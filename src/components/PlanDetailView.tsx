@@ -113,15 +113,15 @@ const PlanDetailView = () => {
       price: 800,
       includedIn: ["premium"],
     },
-    {
-      id: "ai-analytics",
-      name: "Análisis Predictivo",
-      description: "Análisis avanzado de progreso y tendencias",
-      dependencies: ["gest-tracking"],
-      category: "Inteligencia Artificial",
-      price: 900,
-      includedIn: ["premium"],
-    },
+    // {
+    //   id: "ai-analytics",
+    //   name: "Análisis Predictivo",
+    //   description: "Análisis avanzado de progreso y tendencias",
+    //   dependencies: ["gest-tracking"],
+    //   category: "Inteligencia Artificial",
+    //   price: 900,
+    //   includedIn: ["premium"],
+    // },
 
     // Portal Web
     {
